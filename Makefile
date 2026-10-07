@@ -10,4 +10,4 @@ PKG_LICENSE:=Apache-2.0
 PKG_MAINTAINER:=
 
 include $(TOPDIR)/feeds/luci/luci.mk
-$(eval $(call BuildPackage,luci-app-poweroff))
+# call BuildPackage - OpenWrt buildroot signature
