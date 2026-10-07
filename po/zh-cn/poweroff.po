@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_Hans\n"
+
+msgid "Power Off"
+msgstr "关机"
+
+msgid "Shut down the device. Physical access is required to turn it on again."
+msgstr "关闭设备。再次开机需要物理接触设备（按电源键或重新通电）。"
+
+msgid "Perform power off"
+msgstr "执行关机"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Are you sure you want to power off the device?"
+msgstr "确定要关闭设备吗？"
+
+msgid "The device is shutting down. You can unplug the power once the LEDs turn off."
+msgstr "设备正在关机，指示灯熄灭后即可断电。"

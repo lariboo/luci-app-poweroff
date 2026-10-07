@@ -1,0 +1,15 @@
+{
+	"luci-app-poweroff": {
+		"description": "Grant access to power off the device",
+		"read": {
+			"file": {
+				"/sbin/poweroff": [ "exec" ]
+			}
+		},
+		"write": {
+			"file": {
+				"/sbin/poweroff": [ "exec" ]
+			}
+		}
+	}
+}

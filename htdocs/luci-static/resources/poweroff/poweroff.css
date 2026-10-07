@@ -1,0 +1,64 @@
+/* luci-app-poweroff：兼容亮/暗主题，新旧 LuCI 共用 */
+.po-card {
+	max-width: 420px;
+	margin: 2em auto;
+	padding: 2.2em 1.5em 1.8em;
+	text-align: center;
+	border-radius: 16px;
+	background: rgba(128, 128, 128, .08);
+	border: 1px solid rgba(128, 128, 128, .22);
+	box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+}
+
+.po-btn {
+	position: relative;
+	width: 112px;
+	height: 112px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	background:
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v9'/><path d='M6.4 6.6a8 8 0 1 0 11.2 0'/></svg>") center / 52% no-repeat,
+		linear-gradient(145deg, #ff6b6b, #d6293a);
+	box-shadow: 0 8px 20px rgba(214, 41, 58, .45), inset 0 2px 4px rgba(255, 255, 255, .35);
+	transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+	animation: po-pulse 2.4s ease-in-out infinite;
+}
+
+.po-btn:hover {
+	transform: scale(1.06);
+	filter: brightness(1.08);
+	box-shadow: 0 12px 28px rgba(214, 41, 58, .6), inset 0 2px 4px rgba(255, 255, 255, .4);
+}
+
+.po-btn:active {
+	transform: scale(.94);
+	box-shadow: 0 3px 10px rgba(214, 41, 58, .5), inset 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+.po-btn:focus-visible {
+	box-shadow: 0 0 0 4px rgba(214, 41, 58, .35), 0 8px 20px rgba(214, 41, 58, .45);
+}
+
+.po-title {
+	margin: 1.1em 0 .3em;
+	font-size: 1.15em;
+	font-weight: 600;
+}
+
+.po-desc {
+	margin: 0;
+	font-size: .9em;
+	opacity: .7;
+}
+
+@keyframes po-pulse {
+	0%, 100% { box-shadow: 0 8px 20px rgba(214, 41, 58, .45), 0 0 0 0 rgba(214, 41, 58, .35), inset 0 2px 4px rgba(255, 255, 255, .35); }
+	50%      { box-shadow: 0 8px 20px rgba(214, 41, 58, .45), 0 0 0 16px rgba(214, 41, 58, 0), inset 0 2px 4px rgba(255, 255, 255, .35); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.po-btn { animation: none; transition: none; }
+}

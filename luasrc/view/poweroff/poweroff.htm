@@ -1,0 +1,14 @@
+<%+header%>
+<link rel="stylesheet" href="<%=resource%>/poweroff/poweroff.css" />
+<h2 name="content"><%:Power Off%></h2>
+<div class="cbi-map-descr"><%:Shut down the device. Physical access is required to turn it on again.%></div>
+<form method="post" action="<%=luci.dispatcher.build_url('admin/system/poweroff/call')%>"
+	onsubmit="return confirm('<%:Are you sure you want to power off the device?%>')">
+	<input type="hidden" name="token" value="<%=token%>" />
+	<div class="po-card">
+		<button type="submit" class="po-btn" title="<%:Perform power off%>"></button>
+		<div class="po-title"><%:Perform power off%></div>
+		<p class="po-desc"><%:Shut down the device. Physical access is required to turn it on again.%></p>
+	</div>
+</form>
+<%+footer%>
