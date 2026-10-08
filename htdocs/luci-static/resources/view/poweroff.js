@@ -45,8 +45,7 @@ return view.extend({
 					'aria-label': _('Perform power off'),
 					'click': ui.createHandlerFn(this, 'confirmPoweroff')
 				}),
-				E('div', { 'class': 'po-title' }, _('Perform power off')),
-				E('p', { 'class': 'po-desc' }, _('Shut down the device. Physical access is required to turn it on again.'))
+				E('div', { 'class': 'po-title' }, _('Perform power off'))
 			])
 		]);
 	}
