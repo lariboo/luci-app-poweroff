@@ -15,7 +15,7 @@ return view.extend({
 		var end = Date.now() + SHUTDOWN_WAIT * 1000;
 
 		var tip = E('p', { 'class': 'spinning' },
-			_('The device is shutting down. You can unplug the power once the LEDs turn off.'));
+			_('The device is shutting down'));
 		var num = E('div', { 'class': 'po-countdown' }, String(SHUTDOWN_WAIT));
 		var hint = E('p', { 'class': 'po-hint' },
 			_('Please wait for the countdown to finish before unplugging'));
