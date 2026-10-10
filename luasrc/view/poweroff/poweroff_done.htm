@@ -1,4 +1,28 @@
 <%+header%>
+<link rel="stylesheet" href="<%=resource%>/poweroff/poweroff.css" />
 <h2 name="content"><%:Power Off%></h2>
-<p><%:The device is shutting down. You can unplug the power once the LEDs turn off.%></p>
+<div class="po-card">
+	<p><%:The device is shutting down. You can unplug the power once the LEDs turn off.%></p>
+	<div class="po-countdown" id="po-count">15</div>
+	<p class="po-hint" id="po-hint"><%:Please wait for the countdown to finish before unplugging%></p>
+</div>
+<script type="text/javascript">
+(function() {
+	var wait = 15; /* 秒；如接有 USB 硬盘或为 x86，建议改为 30 */
+	var end = Date.now() + wait * 1000;
+	var n = document.getElementById('po-count');
+	var h = document.getElementById('po-hint');
+	n.textContent = wait;
+	var t = setInterval(function() {
+		var left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+		n.textContent = left;
+		if (left <= 0) {
+			clearInterval(t);
+			n.className = 'po-countdown done';
+			n.textContent = '<%:Safe to unplug%>';
+			h.style.display = 'none';
+		}
+	}, 250);
+})();
+</script>
 <%+footer%>

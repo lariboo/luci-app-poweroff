@@ -23,3 +23,12 @@ msgstr "确定要关闭设备吗？"
 
 msgid "The device is shutting down. You can unplug the power once the LEDs turn off."
 msgstr "设备正在关机，指示灯熄灭后即可断电。"
+
+msgid "Please wait for the countdown to finish before unplugging"
+msgstr "请等待倒计时结束后再断电"
+
+msgid "Safe to unplug"
+msgstr "现在可以断电了"
+
+msgid "Failed to execute power off command."
+msgstr "执行关机命令失败。"
