@@ -47,17 +47,11 @@ return view.extend({
 	},
 
 	confirmPoweroff: function() {
-		ui.showModal(_('Confirm'), [
-			E('p', _('Are you sure you want to power off the device?')),
-			E('div', { 'class': 'right' }, [
-				E('button', { 'class': 'btn', 'click': ui.hideModal }, _('Cancel')),
-				' ',
-				E('button', {
-					'class': 'btn cbi-button cbi-button-negative important',
-					'click': ui.createHandlerFn(this, 'doPoweroff')
-				}, _('Power Off'))
-			])
-		]);
+		/* 使用浏览器原生确认框，与重启页保持一致 */
+		if (!confirm(_('Are you sure you want to power off the device?')))
+			return;
+
+		return this.doPoweroff();
 	},
 
 	render: function() {
@@ -72,7 +66,7 @@ return view.extend({
 					'type': 'button',
 					'title': _('Perform power off'),
 					'aria-label': _('Perform power off'),
-					'click': ui.createHandlerFn(this, 'confirmPoweroff')
+					'click': L.bind(this.confirmPoweroff, this)
 				}),
 				E('div', { 'class': 'po-title' }, _('Perform power off'))
 			])
