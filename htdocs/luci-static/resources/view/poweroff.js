@@ -47,8 +47,8 @@ return view.extend({
 	},
 
 	confirmPoweroff: function() {
-		/* 使用浏览器原生确认框，与重启页保持一致 */
-		if (!confirm(_('Are you sure you want to power off the device?')))
+		/* 使用浏览器原生确认框，与重启页保持一致；两行文字显示在同一个对话框内 */
+		if (!confirm(_('Physical access is required to turn it on again. Press the power button or reconnect the power.') + '\n' + _('Are you sure you want to power off the device?')))
 			return;
 
 		return this.doPoweroff();
@@ -59,7 +59,7 @@ return view.extend({
 			E('link', { 'rel': 'stylesheet', 'href': L.resource('poweroff/poweroff.css') }),
 			E('h2', _('Power Off')),
 			E('div', { 'class': 'cbi-map-descr' },
-				_('Shut down the device. Physical access is required to turn it on again.')),
+				_('Shut down the device')),
 			E('div', { 'class': 'po-card' }, [
 				E('button', {
 					'class': 'po-btn',
