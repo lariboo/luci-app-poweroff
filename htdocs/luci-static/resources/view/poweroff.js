@@ -59,7 +59,7 @@ return view.extend({
 			E('link', { 'rel': 'stylesheet', 'href': L.resource('poweroff/poweroff.css') }),
 			E('h2', _('Power Off')),
 			E('div', { 'class': 'cbi-map-descr' },
-				_('Shut down the device')),
+				_('Power off the device (soft shutdown)')),
 			E('div', { 'class': 'po-card' }, [
 				E('button', {
 					'class': 'po-btn',
