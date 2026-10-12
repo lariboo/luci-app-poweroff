@@ -22,7 +22,7 @@ msgid "Cancel"
 msgstr "取消"
 
 msgid "Are you sure you want to power off the device?"
-msgstr "确定要关闭设备吗？"
+msgstr "确定要关闭设备电源吗？"
 
 msgid "The device is shutting down"
 msgstr "设备正在关机…"
